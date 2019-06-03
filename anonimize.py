@@ -40,7 +40,7 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
     for i in lista:
         f = open (os.path.join(path_out,i),'r')
         mensaje = f.read()
-        anonimos.append([int(os.path.basename(f.name).split(".")[0]),mensaje[:mensaje.index("#")-1]])
+        anonimos.append([int(os.path.basename(f.name).split(".")[0]),mensaje[:mensaje.index("###")-1]])
         f.close()
     
     new_data=pd.DataFrame(anonimos,columns=[colum_id,new_colum])
