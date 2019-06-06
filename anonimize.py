@@ -2,11 +2,15 @@ import os, shutil, sys
 import pandas as pd     
 import unidecode
 
+def get_file():
+    return os.path.dirname(__file__)
+    
+
 
 def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter="~"):
 
     
-    data=pd.read_csv(csv_file,delimiter=delimiter)
+    data=pd.read_csv(csv_file,delimiter=delimiter,encoding='utf-8')
     
     if os.path.exists(path_in):
         shutil.rmtree(path_in)
@@ -30,16 +34,45 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
         
     os.chdir(folder_exe)
 
-    if sys.platform == 'linux':
+    if 'linux' in sys.platform:
         os.system("./"+executer + " " + config_file)
     else:
         os.system(executer + " " + config_file)
+        
+        
+    #####
+    base_folder=os.path.dirname(os.path.abspath(__file__))
+    nombres=os.path.join(base_folder,"nombres.csv")
+    nombres_data=pd.read_csv(nombres)
+    nombres_array=list(nombres_data.Nombres)
+    
+    ####
         
     lista=os.listdir(path_out)
     anonimos=[]    
     for i in lista:
         f = open (os.path.join(path_out,i),'r')
         mensaje = f.read()
+        
+        ###
+        
+        for j in nombres_array:
+            if ' '+j+' ' in mensaje:
+                mensaje=mensaje.replace(j,'[PERSONALNAME]')
+		#print(j)
+            elif (' '+j+' ').lower() in mensaje:
+                mensaje=mensaje.replace(j.lower(),'[PERSONALNAME]')
+		#print(j)
+            elif (' '+j+' ').upper() in mensaje:
+                mensaje=mensaje.replace(j.upper(),'[PERSONALNAME]')
+		#print(j)
+            elif ' '+(j+' ').capitalize() in mensaje:
+                mensaje=mensaje.replace(j.capitalize(),'[PERSONALNAME]')
+		#print(j)
+            else:
+                pass
+        
+        ###
         anonimos.append([int(os.path.basename(f.name).split(".")[0]),mensaje[:mensaje.index("###")-1]])
         f.close()
     
@@ -47,7 +80,7 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
     data.drop(colum_to_anonimize,axis=1,inplace=True)
     
     merge=pd.merge(data,new_data,on=colum_id)
-    merge.to_csv(final_name,sep=delimiter,index=False)
+    merge.to_csv(final_name,sep=delimiter,index=False,encoding='utf-8')
 
     shutil.rmtree(path_in)
     shutil.rmtree(path_out)
@@ -56,6 +89,7 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
     return "completo"          
              
 if __name__ == "__main__":
+  
 
     csv_file = sys.argv[1]
     final_name = sys.argv[2]
@@ -73,7 +107,7 @@ if __name__ == "__main__":
     
 	    base_folder=os.path.dirname(os.path.abspath(__file__))
 
-	    if sys.platform == 'linux':
+	    if 'linux' in sys.platform :
 	        path_scrubber_exe=os.path.join(base_folder,"scrubber.19.0403L/scrubber.19.0403.lnx")
 	    else:
 	        path_scrubber_exe=os.path.join(base_folder,"scrubber.19.0411W/scrubber.19.0411W.exe")
