@@ -7,6 +7,17 @@ Anonymize a text column of a csv with the help of [NLM-Scrubber](https://scrubbe
 
 -unidecode
 
+-spacy
+
+run next line for download model in spanish 
+```python
+$~ spython -m spacy download es_core_news_sm
+
+```
+
+
+
+
 ## Run in Windows or Linux
 
  

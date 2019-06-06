@@ -1,10 +1,10 @@
 import os, shutil, sys
 import pandas as pd     
 import unidecode
+import spacy
 
-def get_file():
-    return os.path.dirname(__file__)
-    
+nlp=spacy.load("es_core_news_sm") 
+ 
 
 
 def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter="~"):
@@ -40,13 +40,7 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
         os.system(executer + " " + config_file)
         
         
-    #####
-    base_folder=os.path.dirname(os.path.abspath(__file__))
-    nombres=os.path.join(base_folder,"nombres.csv")
-    nombres_data=pd.read_csv(nombres)
-    nombres_array=list(nombres_data.Nombres)
     
-    ####
         
     lista=os.listdir(path_out)
     anonimos=[]    
@@ -55,23 +49,11 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
         mensaje = f.read()
         
         ###
-        
-        for j in nombres_array:
-            if ' '+j+' ' in mensaje:
-                mensaje=mensaje.replace(j,'[PERSONALNAME]')
-		#print(j)
-            elif (' '+j+' ').lower() in mensaje:
-                mensaje=mensaje.replace(j.lower(),'[PERSONALNAME]')
-		#print(j)
-            elif (' '+j+' ').upper() in mensaje:
-                mensaje=mensaje.replace(j.upper(),'[PERSONALNAME]')
-		#print(j)
-            elif ' '+(j+' ').capitalize() in mensaje:
-                mensaje=mensaje.replace(j.capitalize(),'[PERSONALNAME]')
-		#print(j)
-            else:
-                pass
-        
+        doc=nlp(unicode(mensaje))
+        for ent in doc.ents:                                                                         
+            if ent.label_ == 'PER':                                                                  
+                mensaje=mensaje.replace(ent.text,'[PERSONALNAME]')
+                        
         ###
         anonimos.append([int(os.path.basename(f.name).split(".")[0]),mensaje[:mensaje.index("###")-1]])
         f.close()
