@@ -11,7 +11,7 @@ Anonymize a text column of a csv with the help of [NLM-Scrubber](https://scrubbe
 
 run next line for download model in spanish 
 ```python
-$~ spython -m spacy download es_core_news_sm
+$~ python -m spacy download es_core_news_sm
 
 ```
 
@@ -22,7 +22,7 @@ $~ spython -m spacy download es_core_news_sm
 
  
 ```python
->> python anonymizer_csv/anonimize.py <csv_file> <final_name> <path_in> <path_out> <colum_to_anonimize> <new_colum> <colum_id> <path_scrubber_exe> <delimiter>
+>> python anonymizer_csv/anonimize.py <csv_file> <final_name> <colum_to_anonimize> <new_colum> <colum_id> <path_scrubber_exe> <delimiter>
 
 ```
 
@@ -38,10 +38,6 @@ $~ sudo chmod 700 anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx
 -csv_file: location (complete) csv file to anonymize
 
 -final_name: location (complete) resulting csv file
-
--path_in: temporary folder location where the original files containing the text of the field to be anonymized are stored
-
--path_out: temporary folder location where the files are stored with the anonymized texts
 
 -colum_to_anonimize: Name of the column to anonymize
 

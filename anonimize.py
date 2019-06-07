@@ -3,15 +3,19 @@ import pandas as pd
 import unidecode
 import spacy
 
-nlp=spacy.load("es_core_news_sm") 
- 
+try:
+	nlp=spacy.load("es_core_news_sm")
+except:
+	os.system("python -m spacy download es_core_news_sm")
+	nlp=spacy.load("es_core_news_sm")
 
-
-def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter="~"):
+def anonimizar(csv_file,final_name,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter="~"):
 
     
     data=pd.read_csv(csv_file,delimiter=delimiter,encoding='utf-8')
     
+    path_in=os.path.join(os.path.dirname(csv_file),'temp_original')
+    path_out=os.path.join(os.path.dirname(csv_file),'temp_anonimo')
     if os.path.exists(path_in):
         shutil.rmtree(path_in)
     if os.path.exists(path_out):
@@ -49,7 +53,7 @@ def anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum
         mensaje = f.read()
         
         ###
-        doc=nlp(unicode(mensaje))
+        doc=nlp(mensaje)
         for ent in doc.ents:                                                                         
             if ent.label_ == 'PER':                                                                  
                 mensaje=mensaje.replace(ent.text,'[PERSONALNAME]')
@@ -75,16 +79,14 @@ if __name__ == "__main__":
 
     csv_file = sys.argv[1]
     final_name = sys.argv[2]
-    path_in =  sys.argv[3]
-    path_out = sys.argv[4]
-    colum_to_anonimize= str(sys.argv[5])
-    new_colum= str(sys.argv[6])
-    colum_id= str(sys.argv[7])
+    colum_to_anonimize= str(sys.argv[3])
+    new_colum= str(sys.argv[4])
+    colum_id= str(sys.argv[5])
 
-    if len(sys.argv) > 8 :
-        path_scrubber_exe= sys.argv[8]
-        delimiter= str(sys.argv[9])
-        anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter)
+    if len(sys.argv) > 6 :
+        path_scrubber_exe= sys.argv[6]
+        delimiter= str(sys.argv[7])
+        anonimizar(csv_file,final_name,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe,delimiter)
     else:
     
 	    base_folder=os.path.dirname(os.path.abspath(__file__))
@@ -94,5 +96,5 @@ if __name__ == "__main__":
 	    else:
 	        path_scrubber_exe=os.path.join(base_folder,"scrubber.19.0411W/scrubber.19.0411W.exe")
 
-	    anonimizar(csv_file,final_name,path_in,path_out,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe)    
+	    anonimizar(csv_file,final_name,colum_to_anonimize,new_colum,colum_id,path_scrubber_exe)    
 
