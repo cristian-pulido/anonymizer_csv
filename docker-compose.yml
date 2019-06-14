@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  develop:
+    image: anonymizer-csv:develop
+    container_name: anonymizer-csv-develop
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true
