@@ -1,0 +1,27 @@
+Use of uninitialized value in numeric lt (<) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/StringAnalysis.pm line 31, <$ifh> line 7.
+Use of uninitialized value in numeric lt (<) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/StringAnalysis.pm line 31, <$ifh> line 8.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 16.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 10.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 7.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 7.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 7.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 7.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 259, <$ifh> line 26.
+Use of uninitialized value $list[0] in numeric gt (>) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/Segmentation.pm line 262, <$ifh> line 26.
+Use of uninitialized value in numeric lt (<) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/StringAnalysis.pm line 31, <$ifh> line 3.
+Use of uninitialized value in numeric lt (<) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/StringAnalysis.pm line 31, <$ifh> line 5.
+Use of uninitialized value in numeric lt (<) at /</home/cpulido/Descargas/anonymizer_csv/scrubber.19.0403L/scrubber.19.0403.lnx>Library/StringAnalysis.pm line 31, <$ifh> line 6.

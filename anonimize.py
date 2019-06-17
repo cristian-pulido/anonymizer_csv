@@ -22,6 +22,7 @@ def anonimizar(csv_file,final_name,colum_to_anonimize,new_colum,colum_id,path_sc
         shutil.rmtree(path_out)
     os.mkdir(path_in)
     os.mkdir(path_out)
+
     
     for i in range(len(data)):
         with open(os.path.join(path_in,str(data[colum_id][i]))+".txt", "w") as text_file:
