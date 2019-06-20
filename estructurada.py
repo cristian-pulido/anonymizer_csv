@@ -51,6 +51,15 @@ def limpiar_csv(path_in,path_out,colum_to_hash,lista_eliminar,delimiter="~"):
     
     return 'completo'
 
+def execCSV(filename, colhash):
+    _from="/media/cpulido/Hitachi/universidad nacional/CONTRAREFERENCIA/"
+    _to="/home/cpulido/Escritorio/pregunta2/CONTRAREFERENCIA/"
+    limpiar_csv(_from + filename + "xlsx",_to + filename + ".csv", colhash, [])
 
-lista=['PrimerNombre', 'SegundoNombre', 'PrimerApellido','SegundoApellido', 'Documento']
-limpiar_csv("/media/cpulido/Hitachi/universidad nacional/CONTRAREFERENCIA/IPES  Ubicacion contacto y acceso a oferta Victimas MY 16.xlsx","/home/cpulido/Escritorio/pregunta2/CONTRAREFERENCIA/IPES  Ubicacion contacto y acceso a oferta Victimas MY 16.csv",lista,[])
+
+execCSV('Registros SDMujer - ACDVPR 2201900222', [])
+execCSV('SDDE Contraref oferta', [])
+execCSV('SDDE Contraref ubicacontacto', [])
+execCSV('SDIS MAYO Datos_Ubicación', [])
+execCSV('SDIS MAYO Personas atendidas', [])
+execCSV('SDS Contraref oferta - Respuesta', [])
